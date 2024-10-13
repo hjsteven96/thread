@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'accounts',
     'threads_auth',
     'django_extensions',
-    'ssl_server',
 ]
 
 MIDDLEWARE = [
