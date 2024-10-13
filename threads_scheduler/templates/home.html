@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Welcome to Threads Scheduler</h1>
+  {% if user.is_authenticated %}
+    <p>Hello, {{ user.username }}!</p>
+    {% if not user.threadstoken %}
+      <a href="{% url 'threads_authorize' %}">Connect Threads Account</a>
+    {% else %}
+      <p>Your Threads account is connected!</p>
+    {% endif %}
+  {% else %}
+    <p>Please <a href="{% url 'login' %}">log in</a> or <a href="{% url 'signup' %}">sign up</a>.</p>
+  {% endif %}
+{% endblock %}
